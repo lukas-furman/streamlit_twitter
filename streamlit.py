@@ -97,7 +97,7 @@ if button:
         looser_res = []
         for x in range(example_tweets):
             winner_res.append(theTweet('https://twitter.com/twitter/statuses/' + str(winner_tweets[-x-1]))) 
-            looser_res.append(theTweet('https://twitter.com/twitter/statuses/' + str(looser_res[x])))
+            looser_res.append(theTweet('https://twitter.com/twitter/statuses/' + str(looser_tweets[x])))
     
         col3, col4 = st.columns(2)
         with col3:
