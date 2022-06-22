@@ -4,6 +4,14 @@ from textblob import TextBlob
 import preprocessor as p
 import statistics
 from typing import List
+import streamlit as st
+import streamlit.components.v1 as components
+import requests
+import plotly.figure_factory as ff
+import plotly.express as px
+import numpy as np
+import pandas as pd
+#import scipy
 
 bearer_token = st.secrets["bearer_token"]
 
@@ -44,16 +52,6 @@ def generate_average_sentiment_score(keyword: str) -> int:
     sorted_tweets = [x for _, x in sorted(zip(sentiment_scores, tweets_id))]
 
     return average_score, sorted_tweets, sentiment_scores, subjectivity_scores
-
-import streamlit as st
-import streamlit.components.v1 as components
-import requests
-import plotly.figure_factory as ff
-import plotly.express as px
-import numpy as np
-import pandas as pd
-#import scipy
-
 
 st.set_page_config(
      page_title="What does humanity prefer?",
