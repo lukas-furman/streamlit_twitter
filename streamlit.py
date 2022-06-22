@@ -5,7 +5,7 @@ import preprocessor as p
 import statistics
 from typing import List
 
-bearer_token = ""
+bearer_token = st.secrets["bearer_token"]
 
 client = tweepy.Client(bearer_token)
 
