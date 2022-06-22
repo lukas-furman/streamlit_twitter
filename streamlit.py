@@ -1,4 +1,3 @@
-
 import tweepy
 from textblob import TextBlob
 import preprocessor as p
@@ -93,35 +92,22 @@ if button:
         st.empty()
         st.header(f"The humanity prefers {winner} over {looser}!")
 
-        res1 = theTweet('https://twitter.com/twitter/statuses/' + str(winner_tweets[-1]))
-        res2 = theTweet('https://twitter.com/twitter/statuses/' + str(looser_tweets[0]))
-        res3 = theTweet('https://twitter.com/twitter/statuses/' + str(winner_tweets[-2]))
-        res4 = theTweet('https://twitter.com/twitter/statuses/' + str(looser_tweets[1]))
-        res5 = theTweet('https://twitter.com/twitter/statuses/' + str(winner_tweets[-3]))
-        res6 = theTweet('https://twitter.com/twitter/statuses/' + str(looser_tweets[2]))
-        res7 = theTweet('https://twitter.com/twitter/statuses/' + str(winner_tweets[-4]))
-        res8 = theTweet('https://twitter.com/twitter/statuses/' + str(looser_tweets[3]))    
+        example_tweets = 4
+        winner_res = []
+        looser_res = []
+        for x in range(example_tweets):
+            winner_res.append(theTweet('https://twitter.com/twitter/statuses/' + str(winner_tweets[-x-1]))) 
+            looser_res.append(theTweet('https://twitter.com/twitter/statuses/' + str(looser_res[x])))
     
         col3, col4 = st.columns(2)
         with col3:
             st.subheader("About " + winner + "...")
-            components.html(res1, height=700, scrolling=True)
-            components.html(res3, height=700, scrolling=True)
-            components.html(res5, height=700, scrolling=True)
-            components.html(res7, height=700, scrolling=True)
+            for x in range(example_tweets):
+                components.html(winner_res[x], height=700, scrolling=True)
         with col4:
             st.subheader("About " + looser + "...")
-            components.html(res2, height=700, scrolling=True)
-            components.html(res4, height=700, scrolling=True)
-            components.html(res6, height=700, scrolling=True)
-            components.html(res8, height=700, scrolling=True)
-
-        # hist_data = [first_sentiment_scores, second_sentiment_scores]
-        # group_labels = [first_thing, second_thing]
-        # fig = ff.create_distplot(hist_data, group_labels, bin_size=[.1, .1])
-        # st.plotly_chart(fig, use_container_width=True)
-        print(len(first_sentiment_scores))
-        print(len(second_sentiment_scores))
+            for x in range(example_tweets):
+                components.html(looser_res[x], height=700, scrolling=True)
 
         hist_data = [first_sentiment_scores, second_sentiment_scores]
         group_labels = [first_thing, second_thing]
