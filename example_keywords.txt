@@ -2,4 +2,49 @@ Batman\ Superman
 Windows OS\ Mac OS
 Joe Rogan\ PewDiePie
 blankets\ pillows
-cats\ dogs
+cat\ dog
+USA\ China
+water\ fire
+pope John Paul II\ pope Francis
+shoes\ socks
+pizza\ hamburger
+sea\ mountains
+capitalism\ communism
+eye glasses\ eye lenses
+Marvel universe\ DC universe
+Lion King\ Pocahontas
+Fanta\ Sprite
+car\ motorcycle
+drink straight\ drink on the rocks
+honey\ maple syroup
+merlot wine\ pinot noir wine
+California\ Texas
+scrambled eggs\ omelette
+ketchup\ mayonnaise
+London\ Los Angeles
+sneakers\ trainers
+Adidas\ Nike
+McDonalds\ Burger King
+legs\ arms
+hotel\ Airbnb
+YouTube\ Twitch 
+muesli\ corn flakes
+Harry Potter\ Lord of the rings
+North Korea\ South Korea
+rice\ potatoes
+mango\ strawberries
+zombies\ aliens
+maths\ literature
+The Office series\ Friends series
+Queen Elizabeth\ Donald Trump
+Lady Gaga\ Katy Perry
+Justin Bieber\ Taylor Swift
+2Pac\ Jay Z
+Johnny Depp\ Amber Heard
+Channing Tatum\ Ryan Gosling
+beer\ wine
+partying\ studying 
+vodka\ tequila
+bees\ mosquitoes
+books\ movies
+Monopoly game\ Scrabble game
