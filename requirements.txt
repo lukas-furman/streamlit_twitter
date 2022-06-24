@@ -9,4 +9,4 @@ streamlit==1.10.0
 textblob==0.17.1
 tweepy==4.10.0
 tweet-preprocessor==0.6.0
-PyGithub=1.55
+PyGithub==1.55
