@@ -94,8 +94,8 @@ if 'keyword2' not in st.session_state:
 
 st.header("What does humanity prefer?")
 col1, col2 = st.columns(2)
-first_thing = col1.text_input("Enter first thing", st.session_state.keyword1)
-second_thing = col2.text_input("Enter second thing", st.session_state.keyword2)
+first_thing = col1.text_input("Enter first thing", key="keyword1")
+second_thing = col2.text_input("Enter second thing", key="keyword2")
 check_button = col1.button("Check!")
 lucky_button = col2.button("Feeling lucky!")
 
