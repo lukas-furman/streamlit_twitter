@@ -137,11 +137,11 @@ if check_button:
     
         col3, col4 = st.columns(2)
         with col3:
-            st.subheader("About " + winner + "... :heart:")
+            st.subheader("About " + winner + "... :heart_eyes:")
             for x in range(example_tweets):
                 components.html(winner_res[x], height=700, scrolling=True)
         with col4:
-            st.subheader("About " + looser + "... :cursing_face:")
+            st.subheader("About " + looser + "... :rage:")
             for x in range(example_tweets):
                 components.html(looser_res[x], height=700, scrolling=True)
 
