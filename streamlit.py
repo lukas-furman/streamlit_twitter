@@ -92,10 +92,6 @@ def update_keywords(keyword1, keyword2):
 # if 'keyword2' not in st.session_state:
 #     st.session_state.keyword2 = ""
 
-random_keywords = random_keywords()
-st.session_state.keyword1 = random_keywords[0]
-st.session_state.keyword2 = random_keywords[1]
-
 st.header("What does humanity prefer?")
 st.session_state
 col1, col2 = st.columns(2)
