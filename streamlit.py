@@ -97,9 +97,8 @@ lucky_button = col2.button("Feeling lucky!")
 
 if lucky_button:
     random_keywords = random_keywords()
-    first_thing = random_keywords[0]
-    second_thing = random_keywords[1]
-    check_button
+    first_thing.value = random_keywords[0]
+    second_thing.value = random_keywords[1]
 
 if check_button:
     first_score, first_tweets, first_sentiment_scores, first_subjectivity_scores = generate_average_sentiment_score(first_thing)
