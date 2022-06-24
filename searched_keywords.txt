@@ -43,3 +43,4 @@ mango\ strawberries\ 2022-06-24 15:31:48.044401
 Joe Rogan\ PewDiePie\ 2022-06-24 15:33:51.894376
 zombies\ aliens\ 2022-06-24 15:34:08.525594
 Harry Potter\ Lord of the rings\ 2022-06-24 15:39:57.999564
+Justin Bieber\ Taylor Swift\ 2022-06-24 15:43:07.115447
