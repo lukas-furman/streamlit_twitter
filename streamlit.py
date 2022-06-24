@@ -88,9 +88,9 @@ def update_keywords(keyword1, keyword2):
     repo.update_file(file_path, 'Keywords update.', updated_file, file.sha, branch='master')
 
 def lucky_keywords():
-    random_keywords = random_keywords()
-    st.session_state.keyword1 = random_keywords[0]
-    st.session_state.keyword2 = random_keywords[1]
+    keywords = random_keywords()
+    st.session_state.keyword1 = keywords[0]
+    st.session_state.keyword2 = keywords[1]
 
 if 'keyword1' not in st.session_state:
     st.session_state.keyword1 = ""
