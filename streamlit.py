@@ -93,6 +93,7 @@ if 'keyword2' not in st.session_state:
     st.session_state.keyword2 = ""
 
 st.header("What does humanity prefer?")
+st.session_state
 col1, col2 = st.columns(2)
 first_thing = col1.text_input("Enter first thing", st.session_state.keyword1)
 second_thing = col2.text_input("Enter second thing", st.session_state.keyword2)
