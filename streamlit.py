@@ -87,10 +87,10 @@ def update_keywords(keyword1, keyword2):
     updated_file = (file.decoded_content).decode('utf-8') + keyword1 + '\ ' + keyword2 + '\ ' + str(datetime.datetime.now()) + '\n'
     repo.update_file(file_path, 'Keywords update.', updated_file, file.sha, branch='master')
 
-if 'keyword1' not in st.session_state:
-    st.session_state.keyword1 = ""
-if 'keyword2' not in st.session_state:
-    st.session_state.keyword2 = ""
+# if 'keyword1' not in st.session_state:
+#     st.session_state.keyword1 = ""
+# if 'keyword2' not in st.session_state:
+#     st.session_state.keyword2 = ""
 
 st.header("What does humanity prefer?")
 st.session_state
