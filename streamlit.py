@@ -74,7 +74,7 @@ def random_keywords():
     repo = g.get_repo(user.login + '/streamlit_twitter')
     file = repo.get_contents('example_keywords.txt', ref='master')
     pairs = (file.decoded_content.decode('utf-8')).split('\n')
-    random_pair = (pairs[random.randrange(0, len(pairs))])
+    random_pair = (pairs[random.randrange(0, len(pairs)-1)])
     keywords = random_pair.split('\ ')
     return keywords
 
@@ -97,8 +97,8 @@ lucky_button = col2.button("Feeling lucky!")
 
 if lucky_button:
     random_keywords = random_keywords()
-    first_thing.value = random_keywords[0]
-    second_thing.value = random_keywords[1]
+    first_thing = col1.text_input("Enter first thing", random_keywords[0])
+    second_thing = col2.text_input("Enter second thing", random_keywords[1])
 
 if check_button:
     first_score, first_tweets, first_sentiment_scores, first_subjectivity_scores = generate_average_sentiment_score(first_thing)
