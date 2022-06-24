@@ -1,3 +1,5 @@
+import github
+from regex import D
 import tweepy
 from textblob import TextBlob
 import preprocessor as p
@@ -10,9 +12,12 @@ import plotly.figure_factory as ff
 import plotly.express as px
 import numpy as np
 import pandas as pd
-#import scipy
+import random
+from github import Github
+import datetime
 
 bearer_token = st.secrets["bearer_token"]
+github_token = st.secrets["github_token"]
 
 client = tweepy.Client(bearer_token)
 
@@ -63,12 +68,40 @@ def theTweet(tweet_url):
     res = response.json()["html"]
     return res
 
+def random_keywords():
+    g = Github(github_token)
+    user = g.get_user()
+    repo = g.get_repo(user.login + '/streamlit_twitter')
+    file = repo.get_contents('example_keywords.txt', ref='master')
+    pairs = (file.decoded_content.decode('utf-8')).split('\n')
+    random_pair = (pairs[random.randrange(0, len(pairs))])
+    keywords = random_pair.split('\ ')
+    return keywords
+
+
+def update_keywords(keyword1, keyword2):
+    g = Github(github_token)
+    user = g.get_user()
+    repo = g.get_repo(user.login + '/streamlit_twitter')
+    file = repo.get_contents('searched_keywords.txt', ref='master')
+    file_path = file.path
+    updated_file = (file.decoded_content).decode('utf-8') + keyword1 + '\ ' + keyword2 + '\ ' + str(datetime.datetime.now()) + '\n'
+    repo.update_file(file_path, 'Keywords update.', updated_file, file.sha, branch='master')
+
 st.header("What does humanity prefer?")
 col1, col2 = st.columns(2)
 first_thing = col1.text_input("Enter first thing")
 second_thing = col2.text_input("Enter second thing")
-button = col1.button("Check!")
-if button:
+check_button = col1.button("Check!")
+lucky_button = col2.button("Feeling lucky!")
+
+if lucky_button:
+    random_keywords = random_keywords()
+    first_thing = random_keywords[0]
+    second_thing = random_keywords[1]
+    check_button = True()
+
+if check_button:
     first_score, first_tweets, first_sentiment_scores, first_subjectivity_scores = generate_average_sentiment_score(first_thing)
     second_score, second_tweets, second_sentiment_scores, second_subjectivity_scores = generate_average_sentiment_score(second_thing)
     if(len(first_sentiment_scores)<90):
@@ -88,7 +121,9 @@ if button:
             looser = first_thing
             winner_tweets = second_tweets
             looser_tweets = first_tweets
-    
+
+        update_keywords(first_thing, second_thing)
+
         st.empty()
         st.header(f"The humanity prefers {winner} over {looser}!")
 
