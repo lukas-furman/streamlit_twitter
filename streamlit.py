@@ -87,23 +87,23 @@ def update_keywords(keyword1, keyword2):
     updated_file = (file.decoded_content).decode('utf-8') + keyword1 + '\ ' + keyword2 + '\ ' + str(datetime.datetime.now()) + '\n'
     repo.update_file(file_path, 'Keywords update.', updated_file, file.sha, branch='master')
 
+def lucky_keywords():
+    random_keywords = random_keywords()
+    st.session_state.keyword1 = random_keywords[0]
+    st.session_state.keyword2 = random_keywords[1]
+
 if 'keyword1' not in st.session_state:
     st.session_state.keyword1 = ""
 if 'keyword2' not in st.session_state:
     st.session_state.keyword2 = ""
 
 st.header("What does humanity prefer?")
-st.session_state
 col1, col2 = st.columns(2)
+
 first_thing = col1.text_input("Enter first thing", st.session_state.keyword1)
 second_thing = col2.text_input("Enter second thing", st.session_state.keyword2)
 check_button = col1.button("Check!")
-lucky_button = col2.button("Feeling lucky!")
-
-if lucky_button:
-    random_keywords = random_keywords()
-    st.session_state.keyword1 = random_keywords[0]
-    st.session_state.keyword2 = random_keywords[1]
+lucky_button = col2.button("Feeling lucky!", on_click = lucky_keywords())
 
 if check_button:
     first_score, first_tweets, first_sentiment_scores, first_subjectivity_scores = generate_average_sentiment_score(first_thing)
