@@ -48,3 +48,4 @@ Fanta\ Sprite\ 2022-06-24 15:46:44.164837
 pope John Paul II\ pope Francis\ 2022-06-24 15:48:19.097171
 Lady Gaga\ Katy Perry\ 2022-12-02 21:49:07.311072
 capitalism\ communism\ 2022-12-02 21:49:48.020094
+London\ Los Angeles\ 2022-12-02 21:50:16.971734
